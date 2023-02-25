@@ -1,4 +1,3 @@
-
 import Flexmania
 
 #This is a basic example of giving x,y coordinates for the matrix LED and then applying a certain level of intensity for that particular LED 
