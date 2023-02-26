@@ -5,6 +5,6 @@ def setupLEDMatrix(X_position, Y_position, intensity): #This turns on an LED at 
   setup.display.pixel(X_position, Y-position, intensity)
   setup.time.sleep(2)
   setup.display.fill(0)
-def setupMPU6050(axis):
+def setupMPU6050(axis): #This prints the value at whichever selected axis
   print(accel_data[axis])
-  setup.time.sleep(1)
+
