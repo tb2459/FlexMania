@@ -43,6 +43,11 @@ down_button = Button(26)
 left_button = Button(13)
 right_button = Button(8)
 
+#Keypad setup
+keypad_1 = Button(14)
+keypad_2 = Button(15)
+keypad_3 = Button(18)
+keypad_4 = Button(19)
 
 LCD_RS = 6
 LCD_E = 5
