@@ -19,6 +19,18 @@ def read_ArcadeButtons():
     return('right')
 
 def read_Keypad():
-  
+  GPIO.setup(button1,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(button2,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(button3,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  GPIO.setup(button4,GPIO.IN, pull_up_down=GPIO.PUD_UP)
+  while (1):
+  if GPIO.input(button1)==1:
+    return('mpu')
+  elif GPIO.input(button2)==1:
+    return('arcade')
+  elif GPIO.input(button3)==1:
+    return('joystick')
+  elif GPIO.input(button4)==1:
+    return('none')
 def write_LCD():
   
