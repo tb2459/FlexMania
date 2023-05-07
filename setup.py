@@ -12,3 +12,9 @@ display = Display(i2c)
 from mpu6050 import mpu6050
 mpu = mpu6050(0x68)
 
+#Arcade Button setup
+up_button = Button(20)
+down_button = Button(26)
+left_button = Button(13)
+right_button = Button(6)
+
