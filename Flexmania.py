@@ -7,5 +7,9 @@ def setupLEDMatrix(X_position, Y_position, intensity): #This turns on an LED at 
   setup.display.fill(0)
 def setupMPU6050(axis): #This prints the value at whichever selected axis
   accel_data = mpu.get_accel_data()
-  print(accel_data[axis])
-
+  return(accel_data[axis])
+def setupArcadeButtons():
+  
+def setupKeypad():
+  
+def setupLCD():
