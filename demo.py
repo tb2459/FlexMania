@@ -10,21 +10,20 @@ intensity = int(input("Choose a light intensity ranging from 0 and 255?"))
 Flexmania.setupLEDMatrix(x,y,intensity)
 
 
-#This is an example of the data that can be gathered from the MPU6050 which would be used to determine the position of the device
-axis = str(input("Select an axis x, y, or z."))
-Flexmania.read_MPU6050(axis)
-
 def read_MPU():
   x_axis = Flexmania.read_MPU6050('x')
-  x_axis = Flexmania.read_MPU6050('y')
+  y_axis = Flexmania.read_MPU6050('y')
+  
 def read_arcade():
+  Flexmania.read_ArcadeButtons()
   
 def update_score():
   
 def read_keypad():
-
+  return(Flexmania.read_Keypad())
+  
 def update_board():
-
+  
 
 
 
