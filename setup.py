@@ -1,12 +1,36 @@
 #This is the library setup for the driver 
 import board
 import busio
+import spidev
 import RPi.GPIO as GPIO
 import time, sys
 from gpiozero import Button
 from adafruit_is31fl3731.matrix import Matrix as Display
 i2c = busio.I2C(board.SCL, board.SDA)
 display = Display(i2c)
+
+
+
+ADC_CH0=0b10000000
+ADC_CH1=0b10010000
+ADC_CH4=0b11000000
+ADC_CMD=0b10000000
+
+spi = spidev.SpiDev()
+spi.open(0,1)
+spi.mode = 0b00
+spi.max_speed_hz = 1350000
+
+readBytes = spi.xfer2([ADC_CH0, 0x00])
+digitalValue_Pressure_Sensor1 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
+
+readBytes = spi.xfer2([ADC_CH1, 0x00])
+digitalValue_Pressure_Sensor2 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
+
+readBytes = spi.xfer2([ADC_CH4, 0x00])
+digitalValue_Potentiometer = (((readBytes[0] & 0b11) << 8) | readBytes[1])
+
+
 
 
 #This is the library setup for the MPU 6050
