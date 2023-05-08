@@ -15,7 +15,7 @@ def read_MPU():
   y_axis = Flexmania.read_MPU6050('y')
   
 def read_arcade():
-  Flexmania.read_ArcadeButtons()
+  return(Flexmania.read_ArcadeButtons())
   
 def update_score():
   
