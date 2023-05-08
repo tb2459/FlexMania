@@ -13,8 +13,10 @@ display = Display(i2c)
 
 ADC_CH0=0b10000000
 ADC_CH1=0b10010000
+ADC_CH2=0b10100000
+ADC_CH3=0b10110000
 ADC_CH4=0b11000000
-ADC_CMD=0b10000000
+ADC_CH7=0b11110000
 
 spi = spidev.SpiDev()
 spi.open(0,1)
@@ -27,10 +29,17 @@ digitalValue_Pressure_Sensor1 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
 readBytes = spi.xfer2([ADC_CH1, 0x00])
 digitalValue_Pressure_Sensor2 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
 
+readBytes = spi.xfer2([ADC_CH2, 0x00])
+digitalValue_Pressure_Sensor3 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
+
+readBytes = spi.xfer2([ADC_CH3, 0x00])
+digitalValue_Pressure_Sensor4 = (((readBytes[0] & 0b11) << 8) | readBytes[1])
+
 readBytes = spi.xfer2([ADC_CH4, 0x00])
 digitalValue_Potentiometer = (((readBytes[0] & 0b11) << 8) | readBytes[1])
 
-
+readBytes = spi.xfer2([ADC_CH7, 0x00])
+digitalValue_Potentiometer = (((readBytes[0] & 0b11) << 8) | readBytes[1])
 
 
 #This is the library setup for the MPU 6050
