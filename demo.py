@@ -50,11 +50,11 @@ def update_board():
 
 
 
-read_on_off_thread = Thread(target = on_off)
-read_on_off_thread.start()
+read_on_off_board_thread = Thread(target = on_off)
+read_on_off_board_thread.start()
 
-read_start_stop_thread = Thread(target = start_stop)
-read_start_stop_thread.start()
+read_start_stop_board_thread = Thread(target = start_stop)
+read_start_stop_board_thread.start()
 
 read_MPU6050_thread = Thread(target = read_MPU)
 read_MPU6050_thread.start()
