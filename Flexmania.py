@@ -18,25 +18,25 @@ def read_ArcadeButtons():
   elif right_button.is_pressed:
     return('right')
 
-def on_off()
+def on_off():
   if on_off.is_pressed:
     return True
-def start_stop()
+def start_stop():
   if start_stop.is_pressed:
     return True
   
-def turn_on_board()
+def turn_on_board():
   #add code to light up all leds with character in center and 1 enemy in top right corner
   
   
-def turn_off_board()
+def turn_off_board():
   #turn off all the leds and scoreboard
   lcd.clear()
 
-def start()
+def start():
   #start making the enemy move and wait for signal from controller
 
-def stop()
+def stop():
   #stop the enemy and character
   
 def read_Keypad():
