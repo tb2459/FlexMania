@@ -11,6 +11,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 display = Display(i2c)
 
 
+GPIO.setmode(GPIO.BCM)
 
 ADC_CH0=0b10000000
 ADC_CH1=0b10010000
