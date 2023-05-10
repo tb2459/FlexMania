@@ -13,6 +13,10 @@ display = Display(i2c)
 
 GPIO.setmode(GPIO.BCM)
 
+GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+
+
 ADC_CH0=0b10000000
 ADC_CH1=0b10010000
 ADC_CH2=0b10100000
