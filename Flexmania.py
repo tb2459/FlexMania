@@ -27,5 +27,8 @@ def read_Keypad():
     return('joystick')
   elif keypad_1.is_pressed:
     return('none')
-def write_LCD():
+def write_LCD(text):
+  lcd.clear()
+  lcd.message(text)
+  
   
