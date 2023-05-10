@@ -34,16 +34,20 @@ def start_stop_board():
 
 
 def read_MPU():
-  x_axis = Flexmania.read_MPU6050('x')
-  y_axis = Flexmania.read_MPU6050('y')
-  
+  While True:
+    x_axis = Flexmania.read_MPU6050('x')
+    y_axis = Flexmania.read_MPU6050('y')
+    return x_axis, y_axis
 def read_arcade():
-  return(Flexmania.read_ArcadeButtons())
+  While True:
+    return(Flexmania.read_ArcadeButtons())
   
 def update_score(score):
-  Flexmania.write_LCD(score)
+  While True:
+    Flexmania.write_LCD(score)
 def read_keypad():
-  return(Flexmania.read_Keypad())
+  While True:
+    return(Flexmania.read_Keypad())
   
 def update_board():
   
