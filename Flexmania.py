@@ -18,6 +18,20 @@ def read_ArcadeButtons():
   elif right_button.is_pressed:
     return('right')
 
+def turn_on_board()
+  #add code to light up all leds with character in center and 1 enemy in top right corner
+  
+  
+def turn_off_board()
+  #turn off all the leds and scoreboard
+  lcd.clear()
+
+def start()
+  #start making the enemy move and wait for signal from controller
+
+def stop()
+  #stop the enemy and character
+  
 def read_Keypad():
  if keypad_1.is_pressed:
     return('mpu')
