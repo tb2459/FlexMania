@@ -18,6 +18,13 @@ def read_ArcadeButtons():
   elif right_button.is_pressed:
     return('right')
 
+def on_off()
+  if on_off.is_pressed:
+    return True
+def start_stop()
+  if start_stop.is_pressed:
+    return True
+  
 def turn_on_board()
   #add code to light up all leds with character in center and 1 enemy in top right corner
   
