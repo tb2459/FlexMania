@@ -12,7 +12,7 @@ Flexmania.setupLEDMatrix(x,y,intensity)
 on_off_count = 0
 start_stop_count = 0
 
-def on_off_board()
+def on_off_board():
   global on_off_count
   While True:
     if Flexmania.on_off() & ((on_off_count % 2) == 0 | on_off_count  == 0) :
@@ -22,7 +22,7 @@ def on_off_board()
       on_off_count += 1
       Flexmania.turn_off_board()
   
-def start_stop_board()
+def start_stop_board():
   global start_stop_count
   While True:
     if Flexmania.on_off() & ((start_stop_count % 2) == 0 | start_stop_count  == 0) :
