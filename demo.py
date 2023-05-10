@@ -17,8 +17,8 @@ def read_MPU():
 def read_arcade():
   return(Flexmania.read_ArcadeButtons())
   
-def update_score():
-  
+def update_score(score):
+  Flexmania.write_LCD(score)
 def read_keypad():
   return(Flexmania.read_Keypad())
   
