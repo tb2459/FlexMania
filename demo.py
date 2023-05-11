@@ -27,7 +27,7 @@ def start_stop_board():
   While True:
     if Flexmania.on_off() & ((start_stop_count % 2) == 0 | start_stop_count  == 0) :
       start_stop_count += 1
-      Flexmania.start)
+      Flexmania.start()
     else:
       start_stop_count += 1
       Flexmania.off()
