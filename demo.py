@@ -52,17 +52,13 @@ enemy_green_track = {
 }
 
 
-
 def enemy_move():
    while True:
+      if
       for (x,y), (x1, y2) in zip(enemy_blue_track.items(), enemy_green_track.items()):
         Flexmania.light_pixel(x, y, 255)
         Flexmania.light_pixel(x1, y1, 255)
         time.sleep(2)
-
-
-
-
 
 
 def on_off_board():
