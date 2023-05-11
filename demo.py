@@ -9,7 +9,7 @@ start_stop_count = 0
 
 def on_off_board():
   global on_off_count
-  While True:
+  while True:
     if Flexmania.on_off() & ((on_off_count % 2) == 0 | on_off_count  == 0) :
       on_off_count += 1
       Flexmania.turn_on_board()
@@ -19,7 +19,7 @@ def on_off_board():
   
 def start_stop_board():
   global start_stop_count
-  While True:
+  while True:
     if Flexmania.on_off() & ((start_stop_count % 2) == 0 | start_stop_count  == 0) :
       start_stop_count += 1
       Flexmania.start()
@@ -29,19 +29,19 @@ def start_stop_board():
 
 
 def read_MPU():
-  While True:
+  while True:
     x_axis = Flexmania.read_MPU6050('x')
     y_axis = Flexmania.read_MPU6050('y')
     return x_axis, y_axis
 def read_arcade():
-  While True:
+  while True:
     return(Flexmania.read_ArcadeButtons())
   
 def update_score(score):
-  While True:
+  while True:
     Flexmania.write_LCD(score)
 def read_keypad():
-  While True:
+  while True:
     return(Flexmania.read_Keypad())
   
 def update_board():
