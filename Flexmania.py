@@ -1,5 +1,35 @@
 import setup
-def setupIMU():
+
+
+blue_led = {
+  0:1, 
+  1:2,
+  2:3,
+  3:4,
+  4:5,
+  5:6,
+  6:7,
+  7:8,
+  7,1
+}
+green_led = {
+  8:2,
+  9:3,
+  10:4,
+  11:5,
+  12:6,
+  13:7,
+  13:4,
+  15:8,
+  15:3
+}
+
+
+
+
+
+def setupIMU()
+  :
   pass
 def setupLEDMatrix(X_position, Y_position, intensity): #This turns on an LED at a given position with a given intensity for two seconds and then turns it off
   setup.display.pixel(X_position, Y_position, intensity)
@@ -27,11 +57,19 @@ def start_stop():
   
 def turn_on_board():
   #add code to light up all leds with character in center and 1 enemy in top right corner
-  
+  for x,y in blue_led.items():
+    if x,y == 4,5:
+      pixel.display(12, 6, 255)
+      pixel.display(10, 4, 255)
+    else:
+      pixel.display(x, y, 255)
   
 def turn_off_board():
   #turn off all the leds and scoreboard
   lcd.clear()
+  for (x,y), (x1, y2) in zip(blue_led.items(), green_led.items()):
+    pixel.display(x, y, 0)
+    pixel.display(x1, y1, 0)
 
 def start():
   #start making the enemy move and wait for signal from controller
