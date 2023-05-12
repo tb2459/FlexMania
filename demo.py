@@ -9,7 +9,7 @@ on_off_count = 0
 start_stop_count = 0
 index_i = 0
 index_k = 1
-Blue: {
+Green: {
   1:[0,1]
   2:[1,2]
   3:[2,3]
@@ -20,7 +20,7 @@ Blue: {
   8:[7,8]
   9:[7,1]
 }
-Green: {
+Blue: {
   10:[8,2]
   11:[9,3]
   12:[10,4]
