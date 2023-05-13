@@ -52,11 +52,11 @@ def stop():
 def read_Keypad():
  if keypad_1.is_pressed:
     return('mpu')
-  elif keypad_1.is_pressed:
+  elif keypad_2.is_pressed:
     return('arcade')
-  elif keypad_1.is_pressed:
+  elif keypad_3.is_pressed:
     return('joystick')
-  elif keypad_1.is_pressed:
+  elif keypad_4.is_pressed:
     return('none')
   
 def write_LCD(text):
