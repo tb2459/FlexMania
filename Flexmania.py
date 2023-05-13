@@ -26,6 +26,8 @@ def turn_on_board(blue_led):
   for x,y in blue_led.items():
     if x,y == 4,5:
       pixel.display(12, 6, 255)
+    elif x,y == 2,3:
+      pixel.display(2, 3, 255)
       pixel.display(10, 4, 255)
     else:
       pixel.display(x, y, 255)
