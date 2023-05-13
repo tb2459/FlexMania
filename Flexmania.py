@@ -1,5 +1,13 @@
 import setup
 
+game_board = [[{0:0}, {1:0}, {2:0}],
+              [{3:0}, {4:0}, {5:0}],
+              [{6:0}, {7:0}, {8:0}]]
+
+def update_game_board():
+  
+  
+def on_off_up_game(on_off):
 
 def read_MPU6050(axis): #This prints the value at whichever selected axis
   accel_data = mpu.get_accel_data()
