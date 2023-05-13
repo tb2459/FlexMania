@@ -87,62 +87,73 @@ enemy_green_track = {
   10:4
 }
 
+
+
+
+
+
+
+
+
+
+
+
 def joystick():
   while True:
     if((index_i == 0) and (index_k == 1)):
       if(setup.digitalValue_Pressure_Sensor1<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 3
         index_k = 4
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor4<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 1
         index_k = 2
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
     elif((index_i == 1) and (index_k == 2)):
       if(setup.digitalValue_Pressure_Sensor1<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 4 
         index_k = 5
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor4<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 2 
         index_k = 3
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor2<300):
         setup.display.pixel(index_i,index_k,0)
         index_i = 0
         index_k = 1
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
      elif((index_i == 2) and (index_k == 3)):
       if(setup.digitalValue_Pressure_Sensor1<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 5
         index_k = 6
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor2<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 1
         index_k = 2
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
      elif((index_i == 3) and (index_k == 4)):
       if(setup.digitalValue_Pressure_Sensor1<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 6 
         index_k = 7
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor4<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 4 
         index_k = 5
         setup.display.pixel(index_i,index_k,127)
       if(setup.digitalValue_Pressure_Sensor3<300):
-        setup.display.pixel(index_i,index_k,0)
+        Flexmania.light_pixel(index_i,index_k,0)
         index_i = 0
         index_k = 1
-        setup.display.pixel(index_i,index_k,127)
+        Flexmania.light_pixel(index_i,index_k,127)
 def enemy_move():
    while True:
       if
