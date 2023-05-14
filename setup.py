@@ -49,6 +49,13 @@ digitalValue_Potentiometer = (((readBytes[0] & 0b11) << 8) | readBytes[1])
 from mpu6050 import mpu6050
 mpu = mpu6050(0x68)
 
+up_joy = 7
+down_joy = 11
+left_joy = 9
+right_joy = 10
+
+
+
 #Arcade Button setup
 up_button = Button(20)
 down_button = Button(26)
