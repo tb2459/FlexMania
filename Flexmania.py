@@ -59,8 +59,8 @@ def start():
 def stop():
   #stop the enemy and character
   
-def read_Keypad():
- if keypad_1.is_pressed:
+def read_keypad():
+  if keypad_1.is_pressed:
     return('mpu')
   elif keypad_2.is_pressed:
     return('arcade')
