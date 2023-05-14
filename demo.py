@@ -3,6 +3,8 @@ import Flexmania
 from threading import Thread, Lock, Event
 from time import sleep
 from queue import Queue
+import sys
+
 
 
 on_off_count = 0
@@ -171,21 +173,26 @@ def enemy_move():
   while True:
     for (x,y) in zip(enemy_blue_track, enemy_green_track):
       for (key,value), (key1, value2) in zip(x.items(), y.items()):
-      Flexmania.light_pixel(key, value, 255)
-      Flexmania.light_pixel(key1, value1, 255)
-      for item in enemy_board[x]:
-        for key, value in item[0].items():
-          game_board[(value[0])][(value[1])].update({key, 3})
+        if !(check_player()):
+          
+          Flexmania.light_pixel(key, value, 255)
+          Flexmania.light_pixel(key1, value1, 255)
+          for item in enemy_board[x]:
+            for key, value in item[0].items():
+              game_board[(value[0])][(value[1])].update({key, 3})
         
-      time.sleep(2)
+          time.sleep(2)
 
-def check_player(x, y, key, value, key1, value1):
+def check_player(x):
   for item in enemy_board[x+1]:
     for key, value in item[0].items():
       if game_board[(value[0])][(value[1])][key] == 2:
         Flexmania.write_LCD("You lost", score)
         time.sleep(10)
         Flexmania.turn_off_board()
+        sys.exit(0)
+      else:
+        return false
       
 
         
@@ -217,6 +224,8 @@ def start_stop_board():
     if Flexmania.on_off() & ((start_stop_count % 2) == 0 | start_stop_count  == 0) :
       start_stop_count += 1
       Flexmania.start()
+      enemy_move()
+      player_move()
     else:
       start_stop_count += 1
       Flexmania.off()
@@ -237,9 +246,6 @@ def update_score(score):
 def read_keypad():
   while True:
     return(Flexmania.read_Keypad())
-  
-def update_board():
-  
 
 
 
