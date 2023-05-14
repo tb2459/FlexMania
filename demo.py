@@ -208,7 +208,7 @@ def on_off_board():
             if i == 4:
               item.update({4: 2})
             elif i == 2:
-              item.update({4: 3})
+              item.update({2: 3})
             else:
               item.update({i, 1})
     else:
