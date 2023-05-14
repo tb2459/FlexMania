@@ -9,6 +9,8 @@ on_off_count = 0
 start_stop_count = 0
 index_i = 0
 index_k = 1
+score = 0
+enemy_loop = 0
 Green: {
   1:[0,1]
   2:[1,2]
@@ -52,7 +54,7 @@ blue_led = {
   5:6,
   6:7,
   7:8,
-  7,1
+  7:1
 }
 green_led = {
   8:2,
@@ -67,34 +69,45 @@ green_led = {
 }
 
 enemy_blue_track = {
-  5:6,
-  7:1,
-  7:8,
-  6:7,
-  3:4,
-  0:1,
-  1:2,
-  2:3
+  {5:6},
+  {7:1},
+  {7:8},
+  {6:7},
+  {3:4},
+  {0:1},
+  {1:2},
+  {2:3}
 }
-enemy_green_track = {
-  13:7,
-  15:3,
-  15:8,
-  13:4,
-  11:5,
-  8:2,
-  9:3,
-  10:4
-}
+enemy_green_track = [
+  {13:7},
+  {15:3},
+  {15:8},
+  {13:4},
+  {11:5},
+  {8:2},
+  {9:3},
+  {10:4}
+]
 
 
 
 
-
-
-
-
-
+game_board = [[{0:0}, {1:0}, {2:0}],
+              [{3:0}, {4:0}, {5:0}],
+              [{6:0}, {7:0}, {8:0}]]
+  #1 = point
+  #2 = player
+  #3 = enemy
+enemy_board = [
+  [{2:[0,2]}],
+  [{5:[1,2]}],
+  [{8:[2,2]}],
+  [{7:[2,1]}],
+  [{6:[2,0]}],
+  [{3:[1,0]}],
+  [{0:[0,0]}],
+  [{1:[0,1]}]
+]
 
 
 
@@ -155,26 +168,51 @@ def joystick():
         index_k = 1
         Flexmania.light_pixel(index_i,index_k,127)
 def enemy_move():
-   while True:
-      if
-      for (x,y), (x1, y2) in zip(enemy_blue_track.items(), enemy_green_track.items()):
-        Flexmania.light_pixel(x, y, 255)
-        Flexmania.light_pixel(x1, y1, 255)
-        time.sleep(2)
+  while True:
+    for (x,y) in zip(enemy_blue_track, enemy_green_track):
+      for (key,value), (key1, value2) in zip(x.items(), y.items()):
+      Flexmania.light_pixel(key, value, 255)
+      Flexmania.light_pixel(key1, value1, 255)
+      for item in enemy_board[x]:
+        for key, value in item[0].items():
+          game_board[(value[0])][(value[1])].update({key, 3})
+        
+      time.sleep(2)
 
+def check_player(x, y, key, value, key1, value1):
+  for item in enemy_board[x+1]:
+    for key, value in item[0].items():
+      if game_board[(value[0])][(value[1])][key] == 2:
+        Flexmania.write_LCD("You lost", score)
+        time.sleep(10)
+        Flexmania.turn_off_board()
+      
 
+        
+        
 def on_off_board():
-  global on_off_count
   while True:
     if Flexmania.on_off() & ((on_off_count % 2) == 0 | on_off_count  == 0) :
       on_off_count += 1
       Flexmania.turn_on_board()
+      for row in game_board:
+        for item in row:
+          for i, y in item.items():
+            if i == 4:
+              item.update({4: 2})
+            elif i == 2:
+              item.update({4: 3})
+            else:
+              item.update({i, 1})
     else:
       on_off_count += 1
       Flexmania.turn_off_board()
+      for row in game_board:
+        for item in row:
+          for i, y in item.items():
+              item.update({i, 0})
   
 def start_stop_board():
-  global start_stop_count
   while True:
     if Flexmania.on_off() & ((start_stop_count % 2) == 0 | start_stop_count  == 0) :
       start_stop_count += 1
