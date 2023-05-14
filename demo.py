@@ -111,7 +111,9 @@ enemy_board = [
   [{1:[0,1]}]
 ]
 
-
+mpu_queue = []
+joystick_queue = []
+arcade_queue = []
 
 def joystick():
   while True:
@@ -174,7 +176,8 @@ def enemy_move():
     for (x,y) in zip(enemy_blue_track, enemy_green_track):
       for (key,value), (key1, value2) in zip(x.items(), y.items()):
         if !(check_player()):
-          
+          last_green = enemy_blue_track[y]
+          last_blue = enemy_green_track[x]
           Flexmania.light_pixel(key, value, 255)
           Flexmania.light_pixel(key1, value1, 255)
           for item in enemy_board[x]:
@@ -194,7 +197,26 @@ def check_player(x):
       else:
         return false
       
-
+def player_move():
+  controller = Flexmanie.read_Keypad()
+  if controller == 'mpu':
+    if mpu.queue.qsize() > 0:
+      for item in gameboard:
+          for i in item:
+            for key, value in i.items():
+              if i[value] == 2:
+                if mpu.queue.get()[0] > mpu.queue.get()[1] && mpu.queue.get()[0] > 5:
+                  
+                elif mpu.queue.get()[0] > mpu.queue.get()[1] && mpu.queue.get()[0] < -5:
+        
+                elif mpu.queue.get()[0] < mpu.queue.get()[1] && mpu.queue.get()[1] > 5:
+        
+                elif mpu.queue.get()[0] < mpu.queue.get()[1] && mpu.queue.get()[1] < -5:
+      
+        
+    else:
+      pass
+      
         
         
 def on_off_board():
