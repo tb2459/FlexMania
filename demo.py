@@ -157,13 +157,13 @@ def enemy_move():
       if key and key2 == player_pos:
         sys.exit()
       else:
-        Flexmania.pixel.display(value[0], value[1], 0)
-        Flexmania.pixel.display(value2[0], value2[1], 0)
-        Flexmania.pixel.display(value[0], value[1], 127)
-        Flexmania.pixel.display(value2[0], value2[1], 127)
+        Flexmania.light_pixel(value[0], value[1], 0)
+        Flexmania.light_pixel(value2[0], value2[1], 0)
+        Flexmania.light_pixel(value[0], value[1], 127)
+        Flexmania.light_pixel(value2[0], value2[1], 127)
         time.sleep(1)
-        Flexmania.pixel.display(value2[0], value2[1], 0)
-        Flexmania.pixel.display(value[0], value[1], 255)
+        Flexmania.light_pixel(value2[0], value2[1], 0)
+        Flexmania.light_pixel(value[0], value[1], 255)
         if enemy_pos_track > 7:
             enemy_pos_track = 0
         else:
@@ -210,15 +210,15 @@ def player_move(player_change):
         org_y =green_led[player_pos][player_pos][1]
         org_x2 = blue_led[player_pos][player_pos][0]
         org_y2 = blue_led[player_pos][player_pos][1]
-        Flexmania.pixel.display(org_x, org_y, 0)
-        Flexmania.pixel.display(org_x2, org_y2, 255)
+        Flexmania.light_pixel(org_x, org_y, 0)
+        Flexmania.light_pixel(org_x2, org_y2, 255)
         player_pos =+ player_change
         new_x = green_led[player_pos][player_pos][0]
         new_y = green_led[player_pos][player_pos][1]
         new_x2 = blue_led[player_pos][player_pos][0]
         new_y2 = blue_led[player_pos][player_pos][1]
-        Flexmania.pixel.display(new_x2, new_y2, 0)
-        Flexmania.pixel.display(new_x, new_y, 255)
+        Flexmania.light_pixel(new_x2, new_y2, 0)
+        Flexmania.light_pixel(new_x, new_y, 255)
         score += 1
       
         
