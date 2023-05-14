@@ -12,29 +12,22 @@ start_stop_count = 0
 index_i = 0
 index_k = 1
 score = 0
-enemy_loop = 0
-Green: {
-  1:[0,1]
-  2:[1,2]
-  3:[2,3]
-  4:[3,4]
-  5:[4,5]
-  6:[5,6]
-  7:[6,7]
-  8:[7,8]
-  9:[7,1]
-}
-Blue: {
-  10:[8,2]
-  11:[9,3]
-  12:[10,4]
-  13:[11,5]
-  14:[12,6]
-  15:[13,7]
-  16:[13,4]
-  17:[15,8]
-  18:[15,3]
-}
+
+
+player_pos = 4
+enemy_pos = 2
+
+top = [0,1,2]
+left = [0,3,6]
+down = [6,7,8]
+right = [2,5,8]
+
+mpu_queue = []
+joystick_queue = []
+arcade_queue = []
+controller = []
+
+
  Points: 
   {
   1:[[0,1],[8,2]]
@@ -47,69 +40,54 @@ Blue: {
   8:[[7,8],[15,8]]
   9:[[7,1],[15,3]]
 }
-blue_led = {
-  0:1, 
-  1:2,
-  2:3,
-  3:4,
-  4:5,
-  5:6,
-  6:7,
-  7:8,
-  7:1
-}
-green_led = {
-  8:2,
-  9:3,
-  10:4,
-  11:5,
-  12:6,
-  13:7,
-  13:4,
-  15:8,
-  15:3
-}
+blue_led = [
+    {0:[0,1]}, 
+    {1:[1,2]},
+    {2:[2,3]},
+    {3:[3,4]},
+    {4:[4,5]},
+    {5:[5,6]},
+    {6:[6,7]},
+    {7:[7,8]},
+    {8:[7,1]}, 
+]
+green_led = [
+    {0:[8,2]}, 
+    {1:[9,3]},
+    {2:[10,4]},
+    {3:[11,5]},
+    {4:[12,6]},
+    {5:[13,7]},
+    {6:[13,4]},
+    {7:[15,8]},
+    {8:[15,3]}, 
+]
 
-enemy_blue_track = {
-  {5:6},
-  {7:1},
-  {7:8},
-  {6:7},
-  {3:4},
-  {0:1},
-  {1:2},
-  {2:3}
-}
+enemy_blue_track = [
+    {2:[5,6]}, 
+    {5:[7,1]},
+    {8:[7,8]},
+    {7:[6,7]},
+    {6:[3,4]},
+    {3:[0,1]},
+    {0:[1,2]},
+    {1:[2,3]}, 
+]
 enemy_green_track = [
-  {13:7},
-  {15:3},
-  {15:8},
-  {13:4},
-  {11:5},
-  {8:2},
-  {9:3},
-  {10:4}
+    {2:[13,7]}, 
+    {5:[15,3]},
+    {8:[15,8]},
+    {7:[13,4]},
+    {6:[11,5]},
+    {3:[8,2]},
+    {0:[9,3]},
+    {1:[10,4]}, 
 ]
 
 
 
 
-game_board = [[{0:0}, {1:0}, {2:0}],
-              [{3:0}, {4:0}, {5:0}],
-              [{6:0}, {7:0}, {8:0}]]
-  #1 = point
-  #2 = player
-  #3 = enemy
-enemy_board = [
-  [{2:[0,2]}],
-  [{5:[1,2]}],
-  [{8:[2,2]}],
-  [{7:[2,1]}],
-  [{6:[2,0]}],
-  [{3:[1,0]}],
-  [{0:[0,0]}],
-  [{1:[0,1]}]
-]
+
 
 mpu_queue = []
 joystick_queue = []
@@ -171,51 +149,77 @@ def joystick():
         index_i = 0
         index_k = 1
         Flexmania.light_pixel(index_i,index_k,127)
+        
 def enemy_move():
-  while True:
-    for (x,y) in zip(enemy_blue_track, enemy_green_track):
-      for (key,value), (key1, value2) in zip(x.items(), y.items()):
-        if !(check_player()):
-          last_green = enemy_blue_track[y]
-          last_blue = enemy_green_track[x]
-          Flexmania.light_pixel(key, value, 255)
-          Flexmania.light_pixel(key1, value1, 255)
-          for item in enemy_board[x]:
-            for key, value in item[0].items():
-              game_board[(value[0])][(value[1])].update({key, 3})
-        
-          time.sleep(2)
-
-def check_player(x):
-  for item in enemy_board[x+1]:
-    for key, value in item[0].items():
-      if game_board[(value[0])][(value[1])][key] == 2:
-        Flexmania.write_LCD("You lost", score)
-        time.sleep(10)
-        Flexmania.turn_off_board()
-        sys.exit(0)
+  enemy_pos_track = 0
+  while True:    
+    for (key, value), (key2, value2) in zip(enemy_blue_track[enemy_pos_track].items(), enemy_green_track[enemy_pos_track].items()):
+      if key and key2 == player_pos:
+        sys.exit()
       else:
-        return false
+        Flexmania.pixel.display(value[0], value[1], 0)
+        Flexmania.pixel.display(value2[0], value2[1], 0)
+        Flexmania.pixel.display(value[0], value[1], 127)
+        Flexmania.pixel.display(value2[0], value2[1], 127)
+        time.sleep(1)
+        Flexmania.pixel.display(value2[0], value2[1], 0)
+        Flexmania.pixel.display(value[0], value[1], 255)
+        if enemy_pos_track > 7:
+            enemy_pos_track = 0
+        else:
+            enemy_pos_track += 1
+        enemy_pos = key
       
-def player_move():
-  controller = Flexmanie.read_Keypad()
-  if controller == 'mpu':
-    if mpu.queue.qsize() > 0:
-      for item in gameboard:
-          for i in item:
-            for key, value in i.items():
-              if i[value] == 2:
-                if mpu.queue.get()[0] > mpu.queue.get()[1] && mpu.queue.get()[0] > 5:
-                  
-                elif mpu.queue.get()[0] > mpu.queue.get()[1] && mpu.queue.get()[0] < -5:
-        
-                elif mpu.queue.get()[0] < mpu.queue.get()[1] && mpu.queue.get()[1] > 5:
-        
-                elif mpu.queue.get()[0] < mpu.queue.get()[1] && mpu.queue.get()[1] < -5:
+def read_controller():
+    while True:
+        player_change = 0
+        if controller.get() == "mpu":
+            if mpu_queue.get()[1] > 5 and (not(player_pos in top)):
+                player_change = -3 
+            elif mpu_queue.get()[1] < -5 and (not(player_pos in down)):
+                player_change = 3
+            elif mpu_queue.get()[0] < -5 and (not(player_pos in left)):
+                player_change = -1
+            elif mpu_queue.get()[0] > 5 and (not(player_pos in right)):
+               player_change = 1
+        elif controller == "arcade":
+            if arcade_queue.get() == 'up'  and (not(player_pos in top)):
+                player_change = -3 
+            elif arcade_queue.get() == 'down' and (not(player_pos in down)):
+                player_change = 3
+            elif arcade_queue.get() == 'left' and (not(player_pos in left)):
+                player_change = -1
+            elif arcade_queue.get() == 'right' and (not(player_pos in right)):
+                player_change = 1
+        elif controller == 'joystick':
+            if joystick_queue.get() == 'up'  and (not(player_pos in top)):
+                player_change = -3 
+            elif joystick_queue.get() == 'down' and (not(player_pos in down)):
+                player_change = 3
+            elif joystick_queue.get() == 'left' and (not(player_pos in left)):
+                player_change = -1
+            elif joystick_queue.get() == 'right' and (not(player_pos in right)):
+                player_change = 1
+        player_move(player_change)
       
-        
+def player_move(player_change):
+    if player_change + player_pos == enemy_pos:
+        sys.exit(0)
     else:
-      pass
+        org_x = green_led[player_pos][player_pos][0]
+        org_y =green_led[player_pos][player_pos][1]
+        org_x2 = blue_led[player_pos][player_pos][0]
+        org_y2 = blue_led[player_pos][player_pos][1]
+        Flexmania.pixel.display(org_x, org_y, 0)
+        Flexmania.pixel.display(org_x2, org_y2, 255)
+        player_pos =+ player_change
+        new_x = green_led[player_pos][player_pos][0]
+        new_y = green_led[player_pos][player_pos][1]
+        new_x2 = blue_led[player_pos][player_pos][0]
+        new_y2 = blue_led[player_pos][player_pos][1]
+        Flexmania.pixel.display(new_x2, new_y2, 0)
+        Flexmania.pixel.display(new_x, new_y, 255)
+        score += 1
       
         
         
@@ -257,17 +261,18 @@ def read_MPU():
   while True:
     x_axis = Flexmania.read_MPU6050('x')
     y_axis = Flexmania.read_MPU6050('y')
-    return x_axis, y_axis
+    x_y = [x_axis, y_axis]
+    mpu_queue.append(x_y)
 def read_arcade():
   while True:
-    return(Flexmania.read_ArcadeButtons())
+    arcade_queue.append(Flexmania.read_ArcadeButtons())
   
 def update_score(score):
   while True:
     Flexmania.write_LCD(score)
 def read_keypad():
   while True:
-    return(Flexmania.read_Keypad())
+    controller.append(Flexmania.read_keypad())
 
 
 
