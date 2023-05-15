@@ -1,14 +1,8 @@
 import setup
 
-game_board = [[{0:0}, {1:0}, {2:0}],
-              [{3:0}, {4:0}, {5:0}],
-              [{6:0}, {7:0}, {8:0}]]
 
-def update_game_board():
-  
-  
 def on_off_up_game(on_off):
-
+  
 def read_MPU6050(axis): #This prints the value at whichever selected axis
   accel_data = mpu.get_accel_data()
   return(accel_data[axis])
@@ -21,6 +15,17 @@ def read_ArcadeButtons():
     return('left')
   elif right_button.is_pressed:
     return('right')
+  
+  
+def read_joystick():
+  if up_joy.is_pressed:
+    return('up')
+  elif down_joy.is_pressed:
+    return('down')
+  elif left_joy.is_pressed:
+    return('left')
+  elif right_joy.is_pressed:
+    return('right')  
 
 def on_off():
   if on_off.is_pressed:
@@ -31,24 +36,26 @@ def start_stop():
   
 def turn_on_board(blue_led):
   #add code to light up all leds with character in center and 1 enemy in top right corner
-  for x,y in blue_led.items():
-    if x,y == 4,5:
-      pixel.display(12, 6, 255)
-    elif x,y == 2,3:
-      pixel.display(2, 3, 255)
-      pixel.display(10, 4, 255)
-    else:
-      pixel.display(x, y, 255)
+  for items in blue_led:
+    for x,y in items.items():
+        if x == 4:
+            display.pixel(12, 6, 255)
+        elif x == 2:
+            display.pixel(2, 3, 255)
+            display.pixel(10, 4, 255)
+        else:
+            display.pixel(y[0], y[1], 255)
   
-def turn_off_board():
+def turn_off_board(blue, green):
   #turn off all the leds and scoreboard
   lcd.clear()
-  for (x,y), (x1, y2) in zip(blue_led.items(), green_led.items()):
-    pixel.display(x, y, 0)
-    pixel.display(x1, y1, 0)
+  for item1, item2 in zip(blue, green):
+    for (x,y), (x1, y2) in zip(item1.items(), item2.items()):
+        display.pixel(y[0], y[1], 0)
+        display.pixel(y2[0], y2[1], 0)
 
 def light_pixel(x, y, number):
-  pixel.display(x, y, number)
+  display.pixel(x, y, number)
     
       
 def start():
