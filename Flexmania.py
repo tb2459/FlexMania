@@ -1,7 +1,7 @@
 import setup
 
 
-def on_off_up_game(on_off):
+
   
 def read_MPU6050(axis): #This prints the value at whichever selected axis
   accel_data = mpu.get_accel_data()
@@ -57,14 +57,7 @@ def turn_off_board(blue, green):
 def light_pixel(x, y, number):
   display.pixel(x, y, number)
     
-      
-def start():
-  #start making the enemy move and wait for signal from controller
-  while True:
-    
-
-def stop():
-  #stop the enemy and character
+     
   
 def read_keypad():
   if keypad_1.is_pressed:
