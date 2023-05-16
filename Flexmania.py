@@ -474,11 +474,11 @@ def joystick():
 
 def read_keypad():
   if keypad_1.is_pressed:
-    return('mpu')
-  elif keypad_2.is_pressed:
     return('arcade')
+  elif keypad_2.is_pressed:
+    return('jpystick')
   elif keypad_3.is_pressed:
-    return('joystick')
+    return('mpu')
   elif keypad_4.is_pressed:
     return('none')
 
