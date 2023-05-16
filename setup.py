@@ -11,9 +11,6 @@ i2c = busio.I2C(board.SCL, board.SDA)
 display = Display(i2c)
 
 
-on_off = Button(14)
-start_stop = Button(15)
-
 ADC_CH0=0b10000000
 ADC_CH1=0b10010000
 ADC_CH2=0b10100000
