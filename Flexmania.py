@@ -7,312 +7,312 @@ def arcade():
   while True:
     if((index_i == 0) and (index_k == 1)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 1) and (index_k == 2)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 2
           index_k = 3
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 0
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 2) and (index_k == 3)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 3) and (index_k == 4)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 6
           index_k = 7
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 0
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 4) and (index_k == 5)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 5) and (index_k == 6)):
         if(Down.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 2
           index_k = 3
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 6) and (index_k == 7)):
         if(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 7) and (index_k == 8)):
         if(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Right.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 6
           index_k = 7
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 7) and (index_k == 1)):
         if(Up.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(Left.is_pressed):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
           
 def joystick():
   while True:
     if((index_i == 0) and (index_k == 1)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 3
         index_k = 4
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 1
         index_k = 2
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 1) and (index_k == 2)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 4
         index_k = 5
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 2
         index_k = 3
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 0
         index_k = 1
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 2) and (index_k == 3)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 5
         index_k = 6
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 1
         index_k = 2
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 3) and (index_k == 4)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 6
         index_k = 7
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 4
         index_k = 5
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 0
         index_k = 1
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 4) and (index_k == 5)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 7
         index_k = 8
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 5
         index_k = 6
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 1
         index_k = 2
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 3
         index_k = 4
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 5) and (index_k == 6)):
       if(Down.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 7
         index_k = 1
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 4
         index_k = 5
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 2
         index_k = 3
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 6) and (index_k == 7)):
       if(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 3
         index_k = 4
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 7
         index_k = 8
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 7) and (index_k == 8)):
       if(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 4
         index_k = 5
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Right.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 7
         index_k = 1
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 6
         index_k = 7
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
     elif((index_i == 7) and (index_k == 1)):
       if(Up.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 5
         index_k = 6
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
       elif(Left.is_pressed):
-        display.pixel(index_i,index_k,0)
+        setup.display.pixel(index_i,index_k,0)
         index_i = 7
         index_k = 8
-        display.pixel(index_i,index_k,127)
+        setup.display.pixel(index_i,index_k,127)
         time.sleep(0.5)
 
         
@@ -320,156 +320,156 @@ def joystick():
   while True:
       if((index_i == 0) and (index_k == 1)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 1) and (index_k == 2)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 2
           index_k = 3
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 0
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 2) and (index_k == 3)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 3) and (index_k == 4)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 6
           index_k = 7
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[1] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 0
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 4) and (index_k == 5)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[1] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 1
           index_k = 2
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 5) and (index_k == 6)):
         if(mpu.get_accel_data()[1] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[1] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 2
           index_k = 3
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 6) and (index_k == 7)):
         if(mpu.get_accel_data()[1] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 3
           index_k = 4
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 7) and (index_k == 8)):
         if(mpu.get_accel_data()[1] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 4
           index_k = 5
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 1
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 6
           index_k = 7
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
       elif((index_i == 7) and (index_k == 1)):
         if(mpu.get_accel_data()[0] > 5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 5
           index_k = 6
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
         elif(mpu.get_accel_data()[0] < -5):
-          display.pixel(index_i,index_k,0)
+          setup.display.pixel(index_i,index_k,0)
           index_i = 7
           index_k = 8
-          display.pixel(index_i,index_k,127)
+          setup.display.pixel(index_i,index_k,127)
           time.sleep(0.5)
 
 def read_keypad():
